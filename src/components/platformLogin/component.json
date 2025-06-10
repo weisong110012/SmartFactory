@@ -1,0 +1,18 @@
+{
+	"name": "数字工场登录组件",
+	"describe":"数字工场登录界面",
+	"attributes":[
+		{	
+			"parameter":"id",
+			"describe":"数字工场登录界面",
+			"title":"卡片ID",
+			"type":"number"
+		},
+		{
+			"parameter":"data",
+			"describe":"数字工场登录界面",
+			"title":"卡片数据",
+			"type":"object"
+		}
+	]
+}

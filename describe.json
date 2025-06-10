@@ -1,0 +1,13 @@
+{
+	"name": "XXX组件",
+	"version": "0.0.1",
+	"describe": "XXX功能组件",
+	"author": {
+		"name": "XXX组件",
+		"contactInfo":"XXXXX"
+	},
+	"methods":{
+		"create":"创建",
+		"login":"登录"
+	}
+}

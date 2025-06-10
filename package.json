@@ -1,0 +1,35 @@
+{
+	"name": "SmartFactory",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@element-plus/icons-vue": "^2.3.1",
+		"@form-create/designer": "^3.2.11",
+		"@form-create/element-ui": "^3.2.22",
+		"axios": "^1.9.0",
+		"echarts": "^5.6.0",
+		"element-plus": "^2.9.9",
+		"html2canvas": "^1.4.1",
+		"js-cookie": "^3.0.5",
+		"pinia": "^3.0.1",
+		"postcss-pxtorem": "^6.1.0",
+		"sass": "^1.86.0",
+		"sass-loader": "^16.0.5",
+		"simple-mind-map": "^0.13.1-fix.2",
+		"vue": "^3.5.13",
+		"vue-router": "^4.5.0",
+		"vue3-sfc-loader": "^0.9.5"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.2.1",
+		"sass.js": "^0.11.1",
+		"vite": "^6.2.1",
+		"vite-plugin-vue-devtools": "^7.7.2"
+	}
+}
