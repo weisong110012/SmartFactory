@@ -38,7 +38,7 @@
 							:value="item.componentId" />
 					</el-select>
 				</el-form-item>
-				
+
 				<el-form-item :label="attr.title" v-for="attr in selectComponent.attributes">
 					<el-input v-model="detailData[attr.parameter]"></el-input>
 				</el-form-item>
@@ -87,16 +87,15 @@
 		name: '登录组件',
 		componentId: 122,
 		vue: "http://192.168.1.110:8011/base/files/122/loginForm/loginForm.vue",
-		"attributes":[
-			{	
-				"parameter":"isOpen",
-				"title":"新窗口",
-				"type":"number"
+		"attributes": [{
+				"parameter": "isOpen",
+				"title": "新窗口",
+				"type": "number"
 			},
 			{
-				"parameter":"targetPath",
-				"title":"跳转地址",
-				"type":"string"
+				"parameter": "targetPath",
+				"title": "跳转地址",
+				"type": "string"
 			}
 		]
 	}]
@@ -130,8 +129,8 @@
 	function addConfig() {
 		proxy.$httpRequest('componentLibrary.editComponentInstance', 'post', {
 			applicationId: 1,
-			componentInstanceId:1,
-			json:JSON.stringify(detailData)
+			componentInstanceId: 1,
+			json: JSON.stringify(detailData)
 		}).then(res => {
 			dialogVisible.value = false;
 		})
@@ -158,18 +157,37 @@
 	}).then(res => {
 		Object.assign(applicationData, res.data)
 	})
-	
-	const selectComponent=reactive({});
-	function handleSelect(v){
-		let select=opationList.filter(item=>{
-			return item.componentId==v
+
+	const selectComponent = reactive({});
+
+	function handleSelect(v) {
+		let select = opationList.filter(item => {
+			return item.componentId == v
 		})
-		select[0].attributes.filter(item=>{
-			detailData[item.parameter]=''
+		select[0].attributes.filter(item => {
+			detailData[item.parameter] = ''
 		})
-		
-		Object.assign(selectComponent,select[0])
+
+		Object.assign(selectComponent, select[0])
 	}
+	// 设置初始数据
+	function setData(attributes) {
+		const {
+			id,
+			data,
+			emitEvent
+		} = attributes;
+		if (data) {
+			Object.assign(detailData, JSON.parse(data.json))
+		}
+		if (id) {
+
+		}
+	}
+
+	defineExpose({
+		setData
+	})
 </script>
 
 <style scoped lang="scss">
