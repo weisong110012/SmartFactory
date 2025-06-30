@@ -6,7 +6,8 @@
 			"parameter":"id",
 			"describe":"数字工场登录界面",
 			"title":"卡片ID",
-			"type":"number"
+			"type":"number",
+			"source":"config"
 		},
 		{
 			"parameter":"data",
