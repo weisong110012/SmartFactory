@@ -23,10 +23,15 @@ export async function loadComponent(url) {
 		},
 		async getFile(url) {
 			let urlArr=url.split('/');
+			if(urlArr[0]=='http:' || urlArr[0]=='https:'){
+				if(urlArr[1]!=''){
+					urlArr.splice(1,0,'')
+				}
+			}
+			const res = await fetch(urlArr.join('/'));
+			const code = await res.text();
 			urlArr.pop();
 			let frontUrl=urlArr.join('/');
-			const res = await fetch(url);
-			const code = await res.text();
 			const { processedCode, extractedImages } = processVueSfcImages(code, (url) => {
 			  return `${frontUrl}/${url}`;
 			});
